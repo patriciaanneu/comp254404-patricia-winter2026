@@ -82,10 +82,10 @@ public class SinglyLinkedList<E> {
             System.out.println("Both nodes are the same");
             return;
         }
-
+//store the predecessor nodes
         Node<E> prev1 = null;
         Node<E> prev2 = null;
-        Node<E> current = head;
+        Node<E> current = head; //starting point
 
         while (current != null && (prev1 == null || prev2 == null)) {
             if (current.getNext() == node1) {
@@ -111,7 +111,7 @@ public class SinglyLinkedList<E> {
             } else {
                 head = node2;
             }
-            node1.setNext(node2.getNext());
+            node1.setNext(node2.getNext()); //node1 skips over node2
             node2.setNext(node1);
             if (node2 == tail) {
                 tail = node1;
@@ -134,8 +134,8 @@ public class SinglyLinkedList<E> {
             return;
         }
 
-        Node<E> node1Next = node1.getNext();
-        Node<E> node2Next = node2.getNext();
+        Node<E> node1Next = node1.getNext(); //saves the pointer
+        Node<E> node2Next = node2.getNext(); //saves the pointer
 
         if (prev1 != null) {
             prev1.setNext(node2);
@@ -148,7 +148,7 @@ public class SinglyLinkedList<E> {
         } else {
             head = node1;
         }
-
+//completes the swap
         node1.setNext(node2Next);
         node2.setNext(node1Next);
 
@@ -158,7 +158,7 @@ public class SinglyLinkedList<E> {
             tail = node1;
         }
     }
-
+//create an index for the list
     public Node<E> getNodeAt(int index) {
         if (index < 0 || index >= size) {
             return null;
@@ -180,7 +180,7 @@ public class SinglyLinkedList<E> {
         System.out.println("List: " + list1);
 
         Node<String> nodeB = list1.getNodeAt(1);
-        Node<String> nodeE = list1.getNodeAt(4);
+        Node<String> nodeE = list1.getNodeAt(2);
         list1.swapNodes(nodeB, nodeE);
         System.out.println("List After the Swap: " + list1);
     }

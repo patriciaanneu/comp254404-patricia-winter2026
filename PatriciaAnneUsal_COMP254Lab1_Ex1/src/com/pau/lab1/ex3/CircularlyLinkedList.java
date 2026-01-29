@@ -62,12 +62,12 @@ public class CircularlyLinkedList<E> implements  Cloneable {
     }
 
     public CircularlyLinkedList<E> clone() throws CloneNotSupportedException {
-        CircularlyLinkedList<E> other = (CircularlyLinkedList<E>) super.clone();
+        CircularlyLinkedList<E> other = (CircularlyLinkedList<E>) super.clone(); //copies the list
         if (size > 0) {
             Node<E> head = tail.getNext();
             Node<E> newHead = new Node<>(head.getElement(), null);
             Node<E> newTail = newHead;
-            Node<E> walk = head.getNext();
+            Node<E> walk = head.getNext(); //copy the remaining nodes
             while (walk != head) {
                 Node<E> newest = new Node<>(walk.getElement(), null);
                 newTail.setNext(newest);

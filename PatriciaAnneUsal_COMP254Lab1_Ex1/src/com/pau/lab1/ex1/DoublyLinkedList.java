@@ -127,8 +127,7 @@ public class DoublyLinkedList<E> {
         System.out.println("M List: " + M);
 
         L.concatenateDoubly(M);
-        System.out.println("After the concatenation: " + L);
+        System.out.println("L After the concatenation: " + L);
+        System.out.println("M After the concatenation: " + M);
     }
-
-
 }
